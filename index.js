@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoute = require('../api/routes/auth');
 const userRoute = require('../api/routes/users');
+const movieRoute = require('../api/routes/movies');
 
 /* connect vs database */
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(express.json());
 /* Viết api cho từng chức năng */
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
+app.use('/api/movies', movieRoute);
 
 ////
 app.listen(9999, () => {
