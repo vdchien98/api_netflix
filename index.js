@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const authRoute = require('../api/routes/auth');
 const userRoute = require('../api/routes/users');
 const movieRoute = require('../api/routes/movies');
-
+const listRoute = require('./routes/lists');
 /* connect vs database */
 dotenv.config();
 mongoose
@@ -21,6 +21,7 @@ app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/movies', movieRoute);
+app.use('/api/lists', listRoute);
 
 ////
 app.listen(9999, () => {
